@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FairPlay Elite | Premium Gaming & Sports Exchange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FairPlay Elite | Premium Gaming</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
@@ -14,103 +14,75 @@
             --gold: #D4AF37;
             --gold-light: #F9E076;
             --bg-dark: #080808;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(212, 175, 55, 0.2);
         }
 
         body {
             background-color: var(--bg-dark);
             color: #ffffff;
             font-family: 'Outfit', sans-serif;
+            margin: 0;
             overflow-x: hidden;
         }
 
-        /* --- LUXURY TEXT GRADIENT --- */
         .gold-gradient {
             background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* --- HERO BACKGROUND --- */
+        /* --- LAYOUT OPTIMIZATION --- */
+        .full-page-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Ensures no scroll on main screen */
+        }
+
         .hero-visual {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent),
-                        linear-gradient(to bottom, rgba(8,8,8,0.8), #080808),
-                        url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2070&auto=format&fit=crop');
+            background: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.15), transparent),
+                        linear-gradient(to bottom, rgba(8,8,8,0.6), #080808),
+                        url('https://images.unsplash.com/photo-1596838132731-dd96565418ef?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             z-index: -1;
         }
 
-        /* --- BUTTONS --- */
         .btn-main {
             background: linear-gradient(135deg, #D4AF37 0%, #F9E076 100%);
             color: #000;
-            font-weight: 700;
+            font-weight: 800;
             padding: 14px 28px;
             border-radius: 12px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-main:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.6);
-            filter: brightness(1.1);
+            box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.5);
         }
 
         .btn-outline {
-            border: 1px solid var(--glass-border);
-            background: var(--glass);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             padding: 14px 28px;
             border-radius: 12px;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             font-weight: 600;
             transition: all 0.3s;
         }
 
-        .btn-outline:hover {
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.05);
-        }
-
-        /* --- CARDS --- */
-        .glass-panel {
-            background: rgba(15, 15, 15, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-        }
-
-        .game-card {
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .game-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-
-        /* --- TICKER --- */
+        /* --- ANIMATED TICKER --- */
         @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .ticker-wrap {
             overflow: hidden;
-            background: rgba(0,0,0,0.8);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 10px 0;
+            background: rgba(0,0,0,0.9);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 6px 0;
+            flex-shrink: 0;
         }
         .ticker-move {
             display: flex;
@@ -119,189 +91,142 @@
         }
 
         .font-luxury { font-family: 'Cinzel', serif; }
+
+        /* --- MOBILE TIGHTENING --- */
+        @media (max-width: 768px) {
+            .full-page-hero { height: auto; min-height: 100vh; overflow: visible; }
+            .hero-content { padding-top: 1rem; }
+            .hero-title { font-size: 3.2rem !important; line-height: 1.1; }
+            .hero-desc { font-size: 0.95rem !important; margin-bottom: 1.5rem !important; }
+            .mobile-hide { display: none !important; }
+            .nav-compact { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        }
+
+        /* Fix for small height screens */
+        @media (max-height: 700px) {
+            .hero-title { font-size: 2.5rem !important; }
+            .hero-desc { display: none; }
+            .lottie-container { transform: scale(0.8); }
+        }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
     <div class="hero-visual"></div>
 
-    <div class="ticker-wrap sticky top-0 z-[100] backdrop-blur-md">
-        <div class="ticker-move space-x-12">
-            <div class="flex items-center gap-2 px-4">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                <span class="text-[11px] font-bold tracking-widest uppercase"><span class="text-yellow-500">LIVE:</span> IND VS PAK - 1.95 ODDS</span>
+    <div class="full-page-hero">
+        <div class="ticker-wrap sticky top-0 z-[100] backdrop-blur-md">
+            <div class="ticker-move space-x-12">
+                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-yellow-500">LIVE:</span> IND VS PAK - 1.95 ODDS</span>
+                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-yellow-500">PAYOUT:</span> 2 MINUTE INSTANT WITHDRAWAL</span>
+                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-yellow-500">WINNER:</span> USER_991 WON ₹1,80,000</span>
+                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-yellow-500">LIVE:</span> IND VS PAK - 1.95 ODDS</span>
+                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-yellow-500">PAYOUT:</span> 2 MINUTE INSTANT WITHDRAWAL</span>
             </div>
-            <div class="flex items-center gap-2 px-4 border-l border-white/10">
-                <span class="text-[11px] font-bold tracking-widest uppercase"><span class="text-yellow-500">PAYOUT:</span> 2 MINUTE INSTANT WITHDRAWAL</span>
+        </div>
+
+        <nav class="nav-compact max-w-7xl mx-auto w-full px-6 py-4 flex justify-between items-center z-50">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 border border-gold/40 bg-gold/5 rounded-xl flex items-center justify-center font-luxury text-gold text-xl">F</div>
+                <div class="flex flex-col">
+                    <span class="font-luxury text-xl tracking-widest gold-gradient leading-none">FAIRPLAY</span>
+                    <span class="text-[7px] tracking-[0.4em] text-gray-500 font-bold uppercase">Elite Exchange</span>
+                </div>
             </div>
-            <div class="flex items-center gap-2 px-4 border-l border-white/10">
-                <span class="text-[11px] font-bold tracking-widest uppercase"><span class="text-yellow-500">WINNER:</span> USER_882 WON ₹2,40,000 ON ROULETTE</span>
+            <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main !py-2 !px-6 !text-[11px] !rounded-full shadow-none">Log In</a>
+        </nav>
+
+        <main class="flex-grow flex items-center px-6 relative">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="grid lg:grid-cols-2 gap-4 lg:gap-12 items-center hero-content">
+                    
+                    <div class="text-center lg:text-left animate-in fade-in duration-700">
+                        <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1 rounded-full mb-4">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
+                            </span>
+                            <span class="text-[9px] font-bold tracking-[0.2em] text-gray-400 uppercase">Trusted by 2M+ Players</span>
+                        </div>
+                        
+                        <h1 class="hero-title font-luxury text-5xl md:text-7xl lg:text-8xl mb-4 leading-[1.1] text-white">
+                            UNLEASH THE <br>
+                            <span class="gold-gradient">CHAMPION</span>
+                        </h1>
+                        
+                        <p class="hero-desc text-gray-400 text-sm md:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                            India's most prestigious gaming exchange. 
+                            <span class="text-white font-medium underline decoration-gold/50">Instant settlements</span>, zero-delay betting, and the industry's highest odds.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main gap-3">
+                                Create Platinum ID
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            </a>
+                            <a href="https://www.fairplayofficial99.com/sign-up" class="btn-outline">
+                                Explore Markets
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lottie-container hidden md:flex justify-center relative">
+                        <div class="absolute inset-0 bg-gold/10 blur-[120px] rounded-full"></div>
+                        <dotlottie-player
+                            src="https://lottie.host/0da3b876-656e-4ac0-a78f-18b49fb718fb/bwQm8lT2Vs.lottie"
+                            background="transparent" speed="1" loop autoplay
+                            class="relative z-10 w-full max-w-[500px]">
+                        </dotlottie-player>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center gap-2 px-4 border-l border-white/10">
-                <span class="text-[11px] font-bold tracking-widest uppercase"><span class="text-yellow-500">LIVE:</span> IND VS PAK - 1.95 ODDS</span>
-            </div>
-            <div class="flex items-center gap-2 px-4 border-l border-white/10">
-                <span class="text-[11px] font-bold tracking-widest uppercase"><span class="text-yellow-500">PAYOUT:</span> 2 MINUTE INSTANT WITHDRAWAL</span>
+        </main>
+
+        <div class="w-full bg-black/40 backdrop-blur-md border-t border-white/5 py-6 px-6 flex-shrink-0">
+            <div class="max-w-7xl mx-auto flex flex-row justify-around items-center text-center">
+                <div>
+                    <p class="text-gold font-bold text-lg md:text-2xl leading-none">100%</p>
+                    <p class="text-[8px] md:text-[10px] uppercase tracking-widest text-gray-500 mt-1">First Bonus</p>
+                </div>
+                <div class="w-[1px] h-8 bg-white/10"></div>
+                <div>
+                    <p class="text-gold font-bold text-lg md:text-2xl leading-none">2 MIN</p>
+                    <p class="text-[8px] md:text-[10px] uppercase tracking-widest text-gray-500 mt-1">Withdrawal</p>
+                </div>
+                <div class="w-[1px] h-8 bg-white/10"></div>
+                <div class="mobile-hide">
+                    <p class="text-gold font-bold text-lg md:text-2xl leading-none">24/7</p>
+                    <p class="text-[8px] md:text-[10px] uppercase tracking-widest text-gray-500 mt-1">VIP Support</p>
+                </div>
+                <div class="w-[1px] h-8 bg-white/10 mobile-hide"></div>
+                <div>
+                    <p class="text-gold font-bold text-[10px] md:text-xs tracking-tighter text-gray-400">Ads by NexGroww</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-            <div class="w-12 h-12 border border-gold-light/30 bg-gold/10 rounded-xl flex items-center justify-center font-luxury text-gold text-2xl shadow-lg">F</div>
-            <div class="hidden sm:block">
-                <h1 class="font-luxury text-2xl tracking-[0.2em] gold-gradient leading-none">FAIRPLAY</h1>
-                <p class="text-[8px] tracking-[0.4em] text-gray-500 font-bold uppercase">Elite Exchange</p>
-            </div>
-        </div>
-        
-        <div class="flex items-center gap-4">
-            <a href="https://www.fairplayofficial99.com/sign-up" class="text-xs font-bold tracking-widest text-gray-400 hover:text-white transition-colors mr-4 hidden md:block uppercase">Log In</a>
-            <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main !py-3 !px-8 !text-xs">Join Now</a>
-        </div>
-    </nav>
-
-    <section class="max-w-7xl mx-auto px-6 pt-16 pb-24 text-center lg:text-left">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7">
-                <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
-                    </span>
-                    <span class="text-[10px] font-bold tracking-[0.2em] text-gray-300 uppercase">Trusted by 2M+ Players</span>
-                </div>
-                
-                <h2 class="font-luxury text-5xl md:text-8xl mb-8 leading-[1.1] text-white">
-                    UNLEASH THE <br>
-                    <span class="gold-gradient">CHAMPION</span>
-                </h2>
-                
-                <p class="text-gray-400 text-base md:text-xl mb-12 max-w-2xl leading-relaxed font-light">
-                    Experience India's most secure and liquid gaming exchange. 
-                    <span class="text-white font-medium underline decoration-gold/50">Unlimited withdrawals</span>, zero-delay betting, and the best odds in the market.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
-                    <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main gap-3">
-                        Create Platinum ID
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-                    </a>
-                    <a href="https://www.fairplayofficial99.com/sign-up" class="btn-outline">
-                        Explore Live Markets
-                    </a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-5 relative">
-                <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full"></div>
-                <dotlottie-player
-                    src="https://lottie.host/0da3b876-656e-4ac0-a78f-18b49fb718fb/bwQm8lT2Vs.lottie"
-                    background="transparent" speed="1" loop autoplay
-                    class="relative z-10 w-full drop-shadow-2xl">
-                </dotlottie-player>
-            </div>
-        </div>
-    </section>
-
     <section class="max-w-7xl mx-auto px-6 py-20">
-        <div class="flex justify-between items-end mb-16 border-b border-white/5 pb-8">
-            <div>
-                <p class="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-2">Exclusive Access</p>
-                <h3 class="font-luxury text-4xl text-white">ELITE SELECTION</h3>
+        <h3 class="font-luxury text-3xl gold-gradient mb-12">Top Assets</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group">
+                <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-3CJ01.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
             </div>
-            <a href="#" class="text-[11px] font-bold text-gray-500 hover:text-gold tracking-widest uppercase transition-colors">View All Games</a>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="game-card group bg-[#111]">
-                <div class="h-[400px] relative">
-                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-3CJ01.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 right-8">
-                        <span class="text-[10px] text-gold font-bold tracking-widest uppercase block mb-2">Win 100x</span>
-                        <h4 class="font-luxury text-2xl text-white mb-4">Aviator</h4>
-                        <a href="https://www.fairplayofficial99.com/sign-up" class="w-full btn-outline !py-2 !text-[10px] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">Play Now</a>
-                    </div>
-                </div>
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group">
+                <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-TP-V3.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
             </div>
-
-            <div class="game-card group bg-[#111]">
-                <div class="h-[400px] relative">
-                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-TP-V3.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 right-8">
-                        <span class="text-[10px] text-gold font-bold tracking-widest uppercase block mb-2">Live Dealer</span>
-                        <h4 class="font-luxury text-2xl text-white mb-4">Teen Patti</h4>
-                        <a href="https://www.fairplayofficial99.com/sign-up" class="w-full btn-outline !py-2 !text-[10px] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">Play Now</a>
-                    </div>
-                </div>
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group">
+                <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_vortex.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
             </div>
-
-            <div class="game-card group bg-[#111]">
-                <div class="h-[400px] relative">
-                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_vortex.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 right-8">
-                        <span class="text-[10px] text-gold font-bold tracking-widest uppercase block mb-2">New Arrival</span>
-                        <h4 class="font-luxury text-2xl text-white mb-4">Vortex Slots</h4>
-                        <a href="https://www.fairplayofficial99.com/sign-up" class="w-full btn-outline !py-2 !text-[10px] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">Play Now</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card group bg-[#111]">
-                <div class="h-[400px] relative">
-                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_instant_lottery.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 right-8">
-                        <span class="text-[10px] text-gold font-bold tracking-widest uppercase block mb-2">Daily Jackpot</span>
-                        <h4 class="font-luxury text-2xl text-white mb-4">Lotto Elite</h4>
-                        <a href="https://www.fairplayofficial99.com/sign-up" class="w-full btn-outline !py-2 !text-[10px] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">Play Now</a>
-                    </div>
-                </div>
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group">
+                <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_instant_lottery.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
             </div>
         </div>
     </section>
 
-    <footer class="mt-20 border-t border-white/5 bg-[#050505] py-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h4 class="font-luxury text-2xl gold-gradient mb-8 tracking-[0.5em]">FAIRPLAY ELITE</h4>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-                <div class="glass-panel p-6 flex flex-col items-center">
-                    <span class="text-gold text-2xl mb-2 font-bold">100%</span>
-                    <span class="text-[9px] uppercase tracking-widest text-gray-500">Welcome Bonus</span>
-                </div>
-                <div class="glass-panel p-6 flex flex-col items-center">
-                    <span class="text-gold text-2xl mb-2 font-bold">2min</span>
-                    <span class="text-[9px] uppercase tracking-widest text-gray-500">Avg Withdrawal</span>
-                </div>
-                <div class="glass-panel p-6 flex flex-col items-center">
-                    <span class="text-gold text-2xl mb-2 font-bold">24/7</span>
-                    <span class="text-[9px] uppercase tracking-widest text-gray-500">VIP Support</span>
-                </div>
-                <div class="glass-panel p-6 flex flex-col items-center">
-                    <span class="text-gold text-2xl mb-2 font-bold">1M+</span>
-                    <span class="text-[9px] uppercase tracking-widest text-gray-500">Active IDs</span>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main px-16">Claim Your Bonus Now</a>
-                <p class="mt-6 text-[10px] text-gray-600 uppercase tracking-widest">Ads Managed by <a href="https://telegram.me/+TRlJl628l-FkMWE9" class="text-gold">NexGroww Agency</a></p>
-            </div>
-
-            <div class="text-[9px] text-gray-700 uppercase tracking-[0.3em] space-y-2">
-                <p>© 2026 FAIRPLAY ELITE INDIA. OFFICIAL LICENSED PARTNER.</p>
-                <p>RESPONSIBLE GAMING INVOLVES FINANCIAL RISK. 18+ ONLY.</p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="lg:hidden fixed bottom-6 left-6 right-6 z-[200]">
-        <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main w-full shadow-2xl !py-5 text-sm">
-            CLAIM 100% DEPOSIT BONUS
+    <div class="lg:hidden fixed bottom-4 left-4 right-4 z-[200]">
+        <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main w-full !py-4 shadow-[0_20px_40px_rgba(212,175,55,0.4)] border-t border-white/20">
+            GET YOUR PLATINUM ID NOW
         </a>
     </div>
 
