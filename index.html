@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Betting | Live Odds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body { background-color: #050505; color: #f3f4f6; overflow-x: hidden; }
+        
+        /* Custom Neon Glow for Buttons */
+        .glow-green { box-shadow: 0 0 15px rgba(76, 175, 80, 0.4); }
+        .glow-orange { box-shadow: 0 0 15px rgba(245, 124, 0, 0.4); }
+
+        /* Smooth Pulse for Live Status */
+        .pulse-live {
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+
+        /* Betting Box Styles */
+        .back-box { background-color: #d1e3ff; color: #1e3a8a; }
+        .lay-box { background-color: #ffdce0; color: #991b1b; }
+        
+        /* Hide scrollbar for mobile nav */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="animate__animated animate__fadeIn">
+
+    <header class="sticky top-0 z-50 bg-[#111] border-b border-gray-800 p-3 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="text-orange-500 font-black italic text-2xl tracking-tighter">FAIRPLAY</span>
+        </div>
+        <div class="flex gap-3">
+            <button class="text-sm font-bold text-white px-4 py-2 rounded bg-orange-600 hover:bg-orange-500 transition-all glow-orange">
+                LOGIN
+            </button>
+            <a href="https://www.fairplayofficial99.com/sign-up?utm_source=landing_page&utm_medium=top_nav" 
+               class="text-sm font-bold text-white px-4 py-2 rounded bg-green-600 hover:bg-green-500 transition-all glow-green animate__animated animate__pulse animate__infinite">
+                REGISTER
+            </a>
+        </div>
+    </header>
+
+    <nav class="flex gap-6 p-4 bg-[#1a1a1a] overflow-x-auto no-scrollbar border-b border-gray-800 text-xs font-bold uppercase tracking-widest text-gray-400">
+        <a href="#" class="text-orange-500 border-b-2 border-orange-500 pb-1">Inplay</a>
+        <a href="#" class="hover:text-white transition">Horse Racing</a>
+        <a href="#" class="hover:text-white transition">Casino</a>
+        <a href="#" class="hover:text-white transition">Slot Games</a>
+        <a href="#" class="hover:text-white transition">Cricket</a>
+    </nav>
+
+    <main class="p-4 max-w-lg mx-auto">
+        
+        <div class="flex items-center gap-2 mb-4">
+            <div class="w-2 h-2 bg-red-600 rounded-full pulse-live"></div>
+            <h2 class="text-lg font-bold">Upcoming Races</h2>
+        </div>
+
+        <div class="bg-[#1e1e1e] rounded-xl mb-4 overflow-hidden border border-gray-800 animate__animated animate__fadeInUp">
+            <div class="bg-[#252525] p-2 flex justify-between items-center border-b border-gray-800">
+                <div class="flex items-center gap-2">
+                    <img src="https://flagcdn.com/w20/in.png" width="20" alt="India">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase">Greyville (R1)</span>
+                </div>
+                <span class="text-[10px] text-gray-500">Starts in 5m</span>
+            </div>
+            
+            <div class="p-3 space-y-3">
+                <div class="flex justify-between items-center group">
+                    <span class="text-sm font-semibold group-hover:text-orange-400 transition">1. Wade Keeping</span>
+                    <div class="flex gap-1">
+                        <button class="back-box w-14 h-12 rounded flex flex-col items-center justify-center hover:opacity-80 transition">
+                            <span class="font-bold text-sm">1.56</span>
+                            <span class="text-[8px]">415</span>
+                        </button>
+                        <button class="lay-box w-14 h-12 rounded flex flex-col items-center justify-center hover:opacity-80 transition">
+                            <span class="font-bold text-sm">1.58</span>
+                            <span class="text-[8px]">102</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center group">
+                    <span class="text-sm font-semibold group-hover:text-orange-400 transition">2. Word For Word</span>
+                    <div class="flex gap-1">
+                        <button class="back-box w-14 h-12 rounded flex flex-col items-center justify-center hover:opacity-80 transition">
+                            <span class="font-bold text-sm">2.10</span>
+                            <span class="text-[8px]">88</span>
+                        </button>
+                        <button class="lay-box w-14 h-12 rounded flex flex-col items-center justify-center hover:opacity-80 transition">
+                            <span class="font-bold text-sm">2.12</span>
+                            <span class="text-[8px]">45</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative group cursor-pointer overflow-hidden rounded-2xl h-40 bg-gradient-to-br from-indigo-900 to-black border border-gray-700 mt-8 animate__animated animate__zoomIn">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30"></div>
+            <div class="relative h-full flex flex-col justify-center items-center text-center p-4">
+                <h3 class="text-2xl font-black italic text-white mb-1">LIVE CASINO</h3>
+                <p class="text-xs text-blue-400 font-bold tracking-widest uppercase mb-4">Play with Real Dealers</p>
+                <a href="https://www.fairplayofficial99.com/sign-up?utm_source=banner" 
+                   class="bg-white text-black text-[10px] px-6 py-2 rounded-full font-black uppercase hover:bg-orange-500 hover:text-white transition-all">
+                    Play Now
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="fixed bottom-0 left-0 right-0 bg-[#111] border-t border-gray-800 py-3 flex justify-around items-center text-[10px] font-bold text-gray-500">
+        <div class="flex flex-col items-center gap-1 text-orange-500">
+            <span>🏠</span>
+            <span>HOME</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 hover:text-white transition">
+            <span>📊</span>
+            <span>IN-PLAY</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 hover:text-white transition">
+            <span>🎰</span>
+            <span>CASINO</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 hover:text-white transition">
+            <span>👤</span>
+            <span>MY BETS</span>
+        </div>
+    </footer>
+
+</body>
+</html>
