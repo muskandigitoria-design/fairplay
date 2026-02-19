@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FairPlay  | India's Premium Betting Exchange</title>
+    <title>FairPlay Elite | India's Premium Betting Exchange</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --primary: #FF8C00;
             --secondary: #FFB300;
-            --dark: #080808;
-            --accent: #ff4d00;
+            --dark: #050505;
         }
 
         body {
@@ -26,50 +25,39 @@
 
         .font-display { font-family: 'Bebas Neue', sans-serif; }
 
-        /* --- ADVANCED ANIMATED BACKGROUND --- */
-        .bg-mesh {
+        /* Animated Background */
+        .bg-gradient-blur {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-color: #050505;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(255, 140, 0, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(255, 77, 0, 0.1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(255, 179, 0, 0.15) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(255, 140, 0, 0.1) 0px, transparent 50%);
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 140, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 179, 0, 0.1) 0%, transparent 40%);
             z-index: -1;
-            animation: mesh-move 20s ease infinite alternate;
         }
 
-        @keyframes mesh-move {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-
-        /* Glassmorphism Cards */
+        /* Glassmorphism Effect */
         .glass {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
         }
 
-        /* Premium Gold Button */
+        /* Premium Buttons */
         .btn-glow {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: black;
             font-weight: 900;
             text-transform: uppercase;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
         }
 
         .btn-glow:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(255, 140, 0, 0.5);
-            filter: brightness(1.1);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 140, 0, 0.6);
         }
 
-        /* Continuous Ticker */
+        /* Ticker Animation */
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -77,27 +65,26 @@
         .ticker-wrap {
             display: flex;
             white-space: nowrap;
-            animation: scroll 25s linear infinite;
+            animation: scroll 20s linear infinite;
         }
 
-        /* Game Card Hover Glow */
-        .game-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 0 30px rgba(255, 140, 0, 0.2);
+        /* Hero Animation Container */
+        .lottie-container {
+            filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.3));
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
     </style>
 </head>
 <body>
 
-    <div class="bg-mesh"></div>
+    <div class="bg-gradient-blur"></div>
 
-    <div class="bg-black/80 border-b border-orange-500/30 py-2.5 sticky top-0 z-[100] backdrop-blur-xl">
-        <div class="ticker-wrap flex gap-12 text-[10px] md:text-xs font-bold text-orange-400 uppercase tracking-[0.25em]">
+    <div class="bg-orange-600/20 border-b border-orange-500/20 py-2 sticky top-0 z-[100] backdrop-blur-lg">
+        <div class="ticker-wrap flex gap-10 text-[10px] md:text-[12px] font-bold text-orange-400 uppercase tracking-[0.2em]">
             <span>🔥 LIVE: Ind vs Pak Match Odds 2.45x</span>
             <span>💎 User_991 won ₹5,00,000 in Aviator</span>
             <span>⚡ Instant Payouts processed in 2 mins</span>
@@ -105,58 +92,52 @@
             <span>🔥 LIVE: Ind vs Pak Match Odds 2.45x</span>
             <span>💎 User_991 won ₹5,00,000 in Aviator</span>
             <span>⚡ Instant Payouts processed in 2 mins</span>
+            <span>🎰 NEW: Lightning Roulette now live</span>
         </div>
     </div>
 
-    <nav class="px-6 py-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto relative z-50">
-        <div class="flex items-center gap-3 group cursor-pointer">
-            <div class="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center font-black text-black text-2xl shadow-[0_0_20px_rgba(255,140,0,0.4)] group-hover:rotate-12 transition-transform">F</div>
-            <span class="font-display text-3xl md:text-4xl tracking-tighter">FAIR<span class="text-orange-500">PLAY</span> <span class="text-xs font-sans align-top text-gray-500 tracking-widest ml-1">ELITE</span></span>
+    <nav class="px-4 py-4 md:px-8 flex justify-between items-center max-w-7xl mx-auto relative z-50">
+        <div class="flex items-center gap-2">
+            <div class="w-9 h-9 bg-orange-500 rounded-lg flex items-center justify-center font-black text-black text-xl shadow-lg">F</div>
+            <span class="font-display text-2xl md:text-3xl tracking-wider">FAIR<span class="text-orange-500">PLAY</span></span>
         </div>
-        <div class="flex items-center gap-4 md:gap-8">
-            <a href="#" class="hidden sm:block text-xs font-black tracking-widest hover:text-orange-500 transition-colors">LOGIN</a>
-            <a href="#" class="btn-glow px-6 py-2.5 md:px-10 md:py-3.5 rounded-full text-[10px] md:text-xs tracking-tighter">JOIN THE ELITE</a>
+        <div class="flex items-center gap-3 md:gap-6">
+            <a href="#" class="hidden sm:block text-xs font-bold hover:text-orange-500 transition">LOGIN</a>
+            <a href="#" class="btn-glow px-5 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-xs">JOIN NOW</a>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-6 pt-12 md:pt-24 pb-20">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <main class="max-w-7xl mx-auto px-4 pt-8 md:pt-16 pb-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
             
             <div class="text-center lg:text-left order-2 lg:order-1">
-                <div class="inline-flex items-center gap-2 glass px-5 py-2 rounded-full mb-8 border-orange-500/20">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-                    </span>
-                    <span class="text-[10px] font-black text-orange-400 uppercase tracking-[0.3em]">Official Gold Partner 2026</span>
+                <div class="inline-block glass px-4 py-1.5 rounded-full mb-6 border-orange-500/30">
+                    <span class="text-[10px] font-black text-orange-400 uppercase tracking-widest">★ The Gold Standard of Betting</span>
                 </div>
                 
-                <h1 class="font-display text-7xl md:text-[110px] leading-[0.85] mb-8">
-                    PLAY SMART.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-yellow-600">WIN BIGGER.</span>
+                <h1 class="font-display text-6xl md:text-9xl leading-[0.9] mb-6">
+                    BET BIG.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-600">WIN BIGGER.</span>
                 </h1>
                 
-                <p class="text-gray-400 text-base md:text-xl mb-12 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
-                    Experience India's most secure exchange with <span class="text-white font-bold underline decoration-orange-500 underline-offset-4">0% withdrawal fees</span> and ultra-fast instant ID generation.
+                <p class="text-gray-400 text-sm md:text-lg mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed">
+                    Experience India's most secure and fastest betting exchange with <span class="text-white font-bold">0% withdrawal fees</span> and instant ID generation.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
-                    <a href="https://www.fairplayofficial99.com/sign-up" class="btn-glow px-12 py-6 rounded-2xl text-lg flex items-center justify-center gap-4 group">
-                        START EARNING
-                        <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#" class="btn-glow px-10 py-5 rounded-2xl text-lg flex items-center justify-center gap-3">
+                        START PLAYING
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
-                    <a href="https://www.fairplayofficial99.com/sign-up" class="glass px-12 py-6 rounded-2xl font-black text-sm tracking-widest border-white/5 hover:bg-white/10 transition-all flex items-center justify-center">
-                        EXPLORE SPORTS
-                    </a>
+                    <a href="#" class="glass px-10 py-5 rounded-2xl font-bold border-white/10 hover:bg-white/5 transition flex items-center justify-center">SPORTSBOOK</a>
                 </div>
             </div>
 
-            <div class="order-1 lg:order-2 flex justify-center relative">
-                <div class="absolute inset-0 bg-orange-500/10 blur-[120px] rounded-full"></div>
+            <div class="order-1 lg:order-2 lottie-container flex justify-center">
                 <dotlottie-player
                     src="https://lottie.host/0da3b876-656e-4ac0-a78f-18b49fb718fb/bwQm8lT2Vs.lottie"
                     background="transparent"
                     speed="1"
-                    style="width: 100%; max-width: 550px; height: auto; position: relative; z-index: 10;"
+                    style="width: 100%; max-width: 500px; height: auto;"
                     loop
                     autoplay>
                 </dotlottie-player>
@@ -164,87 +145,81 @@
         </div>
     </main>
 
-    <section class="max-w-7xl mx-auto px-6 py-24">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-                <h2 class="font-display text-5xl md:text-7xl italic uppercase mb-2">MOST <span class="text-orange-500 underline decoration-4">WANTED</span></h2>
-                <p class="text-gray-500 font-bold tracking-widest text-xs uppercase">Games that are paying out massive right now</p>
-            </div>
-            <div class="flex gap-3">
-                <button class="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:text-black transition">←</button>
-                <button class="h-12 w-12 rounded-full bg-orange-500 flex items-center justify-center text-black">→</button>
+    <section class="max-w-7xl mx-auto px-4 py-20">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
+            <h2 class="font-display text-4xl md:text-6xl italic uppercase">MOST <span class="text-orange-500 underline decoration-2">POPULAR</span> GAMES</h2>
+            <div class="flex gap-2">
+                <div class="h-1 w-12 bg-orange-500 rounded-full"></div>
+                <div class="h-1 w-4 bg-white/20 rounded-full"></div>
             </div>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-            <div class="glass p-3 rounded-[40px] group cursor-pointer transition-all duration-500 game-card">
-                <div class="overflow-hidden rounded-[32px] relative h-64 md:h-96">
-                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-3CJ01.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <span class="bg-orange-600 text-[8px] px-3 py-1 rounded-full font-black uppercase mb-2 inline-block">Trending 🔥</span>
-                        <p class="font-display text-3xl uppercase">Aviator</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            <div class="glass p-2 rounded-[32px] group cursor-pointer transition-all duration-500 hover:border-orange-500/50">
+                <div class="overflow-hidden rounded-[24px] relative h-48 md:h-72">
+                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-3CJ01.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <p class="font-black text-lg md:text-xl uppercase italic italic">Aviator</p>
+                        <span class="text-[8px] md:text-[10px] text-orange-400 font-bold uppercase tracking-widest">Hot 🔥</span>
                     </div>
                 </div>
             </div>
 
-            <div class="glass p-3 rounded-[40px] group cursor-pointer transition-all duration-500 game-card">
-                <div class="overflow-hidden rounded-[32px] relative h-64 md:h-96">
-                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-TP-V3.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <span class="bg-blue-600 text-[8px] px-3 py-1 rounded-full font-black uppercase mb-2 inline-block">Popular 💎</span>
-                        <p class="font-display text-3xl uppercase">Satta Matka</p>
+            <div class="glass p-2 rounded-[32px] group cursor-pointer transition-all duration-500 hover:border-orange-500/50">
+                <div class="overflow-hidden rounded-[24px] relative h-48 md:h-72">
+                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-TP-V3.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <p class="font-black text-lg md:text-xl uppercase italic">Satta Matka</p>
+                        <span class="text-[8px] md:text-[10px] text-orange-400 font-bold uppercase tracking-widest">Trending 💎</span>
                     </div>
                 </div>
             </div>
 
-            <div class="glass p-3 rounded-[40px] group cursor-pointer transition-all duration-500 game-card">
-                <div class="overflow-hidden rounded-[32px] relative h-64 md:h-96">
-                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_vortex.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <span class="bg-purple-600 text-[8px] px-3 py-1 rounded-full font-black uppercase mb-2 inline-block">Mega Win ⚡</span>
-                        <p class="font-display text-3xl uppercase">Vortex Slots</p>
+            <div class="glass p-2 rounded-[32px] group cursor-pointer transition-all duration-500 hover:border-orange-500/50">
+                <div class="overflow-hidden rounded-[24px] relative h-48 md:h-72">
+                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_vortex.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <p class="font-black text-lg md:text-xl uppercase italic">Vortex Slots</p>
+                        <span class="text-[8px] md:text-[10px] text-orange-400 font-bold uppercase tracking-widest">New ⚡</span>
                     </div>
                 </div>
             </div>
 
-            <div class="glass p-3 rounded-[40px] group cursor-pointer transition-all duration-500 game-card">
-                <div class="overflow-hidden rounded-[32px] relative h-64 md:h-96">
-                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_instant_lottery.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <span class="bg-green-600 text-[8px] px-3 py-1 rounded-full font-black uppercase mb-2 inline-block">Jackpot 🎰</span>
-                        <p class="font-display text-3xl uppercase">Lottery</p>
+            <div class="glass p-2 rounded-[32px] group cursor-pointer transition-all duration-500 hover:border-orange-500/50">
+                <div class="overflow-hidden rounded-[24px] relative h-48 md:h-72">
+                    <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_instant_lottery.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <p class="font-black text-lg md:text-xl uppercase italic">Lottery</p>
+                        <span class="text-[8px] md:text-[10px] text-orange-400 font-bold uppercase tracking-widest">Instant 🎰</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="mt-20 border-t border-white/10 pt-20 pb-40 md:pb-20 px-6 bg-black/40">
+    <footer class="mt-20 border-t border-white/5 pt-16 pb-32 md:pb-16 px-4">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-4xl mb-8 tracking-widest">FAIRPLAY <span class="text-orange-500">ELITE</span></h2>
-            
-            <div class="flex flex-wrap justify-center gap-8 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700 mb-12">
-                <span class="font-black text-xs border border-white/20 px-4 py-2 rounded">PHONEPE</span>
-                <span class="font-black text-xs border border-white/20 px-4 py-2 rounded">GPAY</span>
-                <span class="font-black text-xs border border-white/20 px-4 py-2 rounded">PAYTM</span>
-                <span class="font-black text-xs border border-white/20 px-4 py-2 rounded">USDT (CRYPTO)</span>
+            <h2 class="font-display text-3xl mb-4">FAIRPLAY <span class="text-orange-500">ELITE</span></h2>
+            <div class="flex flex-wrap justify-center gap-6 opacity-30 grayscale mb-10">
+                <span class="font-black text-sm">PHONEPE</span>
+                <span class="font-black text-sm">GPAY</span>
+                <span class="font-black text-sm">PAYTM</span>
+                <span class="font-black text-sm">USDT</span>
             </div>
-            
-            <p class="text-[11px] text-gray-500 uppercase tracking-[0.4em] font-medium max-w-2xl mx-auto leading-loose">
-                Responsible Gaming • 18+ Only • Guaranteed Payouts • Industry-Leading Encryption
+            <p class="text-[10px] text-gray-600 uppercase tracking-[0.3em] font-bold">
+                18+ Only • Play Responsibly • Secure SSL Encrypted
             </p>
-            <div class="mt-10 text-gray-700 text-[10px]">© 2026 FAIRPLAY ELITE LUXURY GAMING ACROSS INDIA.</div>
         </div>
     </footer>
 
-    <div class="lg:hidden fixed bottom-8 left-6 right-6 z-[200]">
-        <a href="https://www.fairplayofficial99.com/sign-up" class="btn-glow w-full py-6 rounded-3xl block text-center text-lg shadow-[0_25px_60px_rgba(255,140,0,0.5)] border-t border-white/20">
-            <span class="flex items-center justify-center gap-3">
-                CLAIM 100% WELCOME BONUS
+    <div class="lg:hidden fixed bottom-6 left-4 right-4 z-[200]">
+        <a href="#" class="btn-glow w-full py-5 rounded-2xl block text-center text-lg shadow-[0_20px_50px_rgba(255,140,0,0.4)]">
+            <span class="flex items-center justify-center gap-2">
+                GET 100% WELCOME BONUS
                 <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
             </span>
         </a>
