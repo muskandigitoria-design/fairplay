@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FairPlay | The Elite Betting Exchange</title>
+    <title>FairPlay | Premium Betting Exchange</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -12,10 +12,9 @@
             color: #ffffff;
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
-            overflow-x: hidden;
         }
 
-        /* Smooth CSS Entrance Animation */
+        /* CSS Entrance Animations */
         .reveal {
             animation: fadeInUp 0.8s ease forwards;
             opacity: 0;
@@ -25,162 +24,98 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Glassmorphism Cards */
+        /* Glass Effect */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: #f57c00;
-            background: rgba(245, 124, 0, 0.02);
+            backdrop-filter: blur(12px);
         }
 
-        /* Glowing Button Effect */
-        .btn-glow {
+        /* Premium Button */
+        .btn-premium {
             background: linear-gradient(135deg, #f57c00 0%, #ff9100 100%);
-            box-shadow: 0 4px 15px rgba(245, 124, 0, 0.3);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px -10px rgba(245, 124, 0, 0.5);
+            transition: 0.3s ease;
         }
-        .btn-glow:hover {
-            box-shadow: 0 8px 25px rgba(245, 124, 0, 0.5);
-            transform: scale(1.02);
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(245, 124, 0, 0.6);
         }
-
-        /* Animated Progress Line for Mobile */
-        .step-number {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            border: 1px solid #f57c00;
-        }
-
-        /* Hide scrollbar but keep functionality */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-lg border-b border-white/5 px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center">
-            <img src="logo.png" alt="FAIRPLAY" class="h-8 md:h-10">
-        </div>
-        <div class="flex gap-4">
-            <a href="https://www.fairplayofficial99.com/sign-up?utm_source=mobile_nav" 
-               class="btn-glow text-white text-[11px] font-extrabold px-6 py-2.5 rounded-full uppercase tracking-wider">
-                Join Now
-            </a>
+    <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/5 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+            <div class="hidden md:block">
+                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Est. 2026</span>
+            </div>
+
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <img src="https://gogamex.fun/wp-content/uploads/2026/02/fairplayofficial99.png" alt="FAIRPLAY" class="h-8 md:h-12 w-auto object-contain">
+            </div>
+
+            <div>
+                <a href="https://www.fairplayofficial99.com/sign-up" 
+                   class="btn-premium text-white text-[10px] font-black px-6 py-2.5 rounded-full uppercase tracking-wider">
+                    Join
+                </a>
+            </div>
         </div>
     </nav>
 
-    <header class="px-6 py-16 md:py-28 text-center max-w-4xl mx-auto">
-        <div class="reveal" style="animation-delay: 0.1s;">
-            <span class="text-orange-500 font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">
-                World's Most Trusted Betting Exchange
-            </span>
-            <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-                Premium Odds. <br> <span class="text-gray-500 italic">Instant Payouts.</span>
+    <header class="px-6 py-20 md:py-32 text-center max-w-5xl mx-auto">
+        <div class="reveal">
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tighter leading-none">
+                THE WORLD'S <br> <span class="text-orange-500 italic">BEST ODDS.</span>
             </h1>
-            <p class="text-gray-400 text-sm md:text-lg mb-10 leading-relaxed font-light">
-                Experience India's #1 platform for Sports and Casino. Get a 300% Welcome Bonus on your first deposit and enjoy lightning-fast 5-minute withdrawals.
+            <p class="text-gray-400 text-sm md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                FairPlay is the premier destination for high-stakes sports trading and live casino excellence. 
+                Get your 300% welcome bonus today.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://www.fairplayofficial99.com/sign-up" class="btn-glow w-full sm:w-auto px-12 py-4 rounded-full font-black text-sm uppercase tracking-widest">
-                    Create Your ID
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://www.fairplayofficial99.com/sign-up" class="btn-premium px-12 py-5 rounded-full font-black text-sm uppercase tracking-widest">
+                    Create Instant ID
                 </a>
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest">1M+ Active Users</p>
             </div>
         </div>
     </header>
 
-    <section class="pb-20 px-6 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto reveal" style="animation-delay: 0.3s;">
-        <div class="glass-card p-4 rounded-2xl text-center">
-            <p class="text-orange-500 text-xl mb-1 font-bold">5m</p>
-            <p class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">Withdrawal</p>
-        </div>
-        <div class="glass-card p-4 rounded-2xl text-center">
-            <p class="text-orange-500 text-xl mb-1 font-bold">24/7</p>
-            <p class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">Live Support</p>
-        </div>
-        <div class="glass-card p-4 rounded-2xl text-center">
-            <p class="text-orange-500 text-xl mb-1 font-bold">300%</p>
-            <p class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">First Bonus</p>
-        </div>
-        <div class="glass-card p-4 rounded-2xl text-center">
-            <p class="text-orange-500 text-xl mb-1 font-bold">100%</p>
-            <p class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">Secure ID</p>
-        </div>
-    </section>
-
-    <section class="bg-white/[0.02] py-20 px-6 border-y border-white/5">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-center text-2xl font-extrabold mb-16 uppercase tracking-[0.2em]">The Process</h2>
-            <div class="space-y-12">
-                <div class="flex gap-6 items-start reveal" style="animation-delay: 0.4s;">
-                    <div class="step-number w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 font-bold text-orange-500">1</div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-1">Registration</h4>
-                        <p class="text-sm text-gray-500">Sign up using your mobile number and get your unique ID in under 30 seconds.</p>
-                    </div>
+    <section class="py-24 px-6 bg-white/[0.01] border-y border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-center text-xs font-bold text-orange-500 uppercase tracking-[0.4em] mb-16">The Professional Protocol</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center reveal" style="animation-delay: 0.2s;">
+                    <div class="text-4xl mb-4">01</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs">Register</h4>
+                    <p class="text-gray-500 text-xs">Create your secure ID with a single click using your mobile number.</p>
                 </div>
-                <div class="flex gap-6 items-start reveal" style="animation-delay: 0.5s;">
-                    <div class="step-number w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 font-bold text-orange-500">2</div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-1">Capitalization</h4>
-                        <p class="text-sm text-gray-500">Add funds instantly via UPI, Bank Transfer, or Crypto with zero transaction fees.</p>
-                    </div>
+                <div class="text-center reveal" style="animation-delay: 0.4s;">
+                    <div class="text-4xl mb-4">02</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs">Capitalize</h4>
+                    <p class="text-gray-500 text-xs">Deposit instantly via UPI or Net Banking with 0% processing fees.</p>
                 </div>
-                <div class="flex gap-6 items-start reveal" style="animation-delay: 0.6s;">
-                    <div class="step-number w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 font-bold text-orange-500">3</div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-1">Global Access</h4>
-                        <p class="text-sm text-gray-500">Bet on international sports markets or play premium live casino games with real-time odds.</p>
-                    </div>
+                <div class="text-center reveal" style="animation-delay: 0.6s;">
+                    <div class="text-4xl mb-4">03</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs">Execute</h4>
+                    <p class="text-gray-500 text-xs">Place your bets on live markets and enjoy 5-minute withdrawals.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-6 max-w-4xl mx-auto">
-        <h3 class="text-center text-xs font-bold text-gray-600 uppercase tracking-[0.3em] mb-10">Live Exchange Feed</h3>
-        <div class="glass-card rounded-3xl overflow-hidden reveal" style="animation-delay: 0.7s;">
-            <div class="p-6 border-b border-white/5 flex justify-between items-center bg-white/5">
-                <span class="text-[10px] font-black uppercase text-orange-500">Live Cricket</span>
-                <div class="flex items-center gap-2">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                    </span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest">In-Play</span>
-                </div>
-            </div>
-            <div class="p-6 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div>
-                    <h5 class="text-xl font-bold">India vs Australia</h5>
-                    <p class="text-[10px] text-gray-500 uppercase mt-1">World Cup Group Stage</p>
-                </div>
-                <div class="flex gap-2">
-                    <button class="w-16 h-14 bg-blue-100/10 border border-blue-500/20 rounded-xl flex flex-col items-center justify-center">
-                        <span class="text-blue-400 text-sm font-bold">1.88</span>
-                        <span class="text-[8px] text-gray-500">45k</span>
-                    </button>
-                    <button class="w-16 h-14 bg-pink-100/10 border border-pink-500/20 rounded-xl flex flex-col items-center justify-center">
-                        <span class="text-pink-400 text-sm font-bold">1.90</span>
-                        <span class="text-[8px] text-gray-500">12k</span>
-                    </button>
-                </div>
-            </div>
+    <section class="py-20 text-center opacity-30 reveal" style="animation-delay: 0.8s;">
+        <div class="flex flex-wrap justify-center gap-10 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <span>Fast Payouts</span>
+            <span>24/7 Live Chat</span>
+            <span>Secure Payments</span>
         </div>
     </section>
 
-    <section class="py-32 px-6 text-center">
-        <h2 class="text-3xl font-extrabold mb-8 uppercase tracking-tighter">Ready to Win?</h2>
-        <a href="https://www.fairplayofficial99.com/sign-up" class="btn-glow inline-block px-14 py-5 rounded-full font-black text-sm uppercase tracking-widest">
-            Enter The Exchange
-        </a>
-    </section>
-
-    <footer class="p-10 text-center border-t border-white/5 text-[9px] text-gray-700 tracking-[0.4em] uppercase">
-        © 2026 FairPlay Official | 18+ Only | Gamble Responsibly
+    <footer class="py-12 text-center border-t border-white/5">
+        <p class="text-[9px] text-gray-700 tracking-[0.5em] uppercase italic">
+            FairPlay Official | Built for the Elite
+        </p>
     </footer>
 
 </body>
