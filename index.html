@@ -25,14 +25,12 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* High Precision Gradients */
         .orange-gradient {
             background: linear-gradient(135deg, #FF4500, #FF8C00, #FFA500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Parallax Hero Background */
         .hero-visual {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -44,35 +42,21 @@
             z-index: -1;
         }
 
-        /* Desktop specific layout tuning */
-        @media (min-width: 1024px) {
-            .hero-container {
-                min-height: 85vh;
-                display: flex;
-                align-items: center;
-            }
-        }
-
-        /* Buttons: Premium Orange Theme */
+        /* BTN STYLING */
         .btn-orange {
             background: linear-gradient(135deg, #FF8C00 0%, #FF4500 100%);
-            color: #000000;
+            color: #000000 !important;
             font-weight: 800;
-            padding: 14px 32px;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 12px 28px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 25px -5px rgba(255, 140, 0, 0.4);
-        }
-
-        .btn-orange:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px -5px rgba(255, 140, 0, 0.6);
-            filter: brightness(1.1);
+            box-shadow: 0 8px 20px -5px rgba(255, 140, 0, 0.4);
+            font-size: 14px;
         }
 
         .btn-outline {
@@ -80,24 +64,19 @@
             color: #ffffff;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            padding: 14px 32px;
-            border-radius: 12px;
+            padding: 12px 28px;
+            border-radius: 10px;
             font-weight: 600;
-            transition: all 0.3s;
+            font-size: 14px;
         }
 
-        .btn-outline:hover {
-            background: rgba(255, 140, 0, 0.1);
-            border-color: var(--orange-primary);
-        }
-
-        /* Smooth Ticker */
+        /* TICKER */
         @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .ticker-wrap {
             overflow: hidden;
             background: #000;
             border-bottom: 1px solid rgba(255, 140, 0, 0.3);
-            padding: 8px 0;
+            padding: 6px 0;
             z-index: 100;
         }
         .ticker-move {
@@ -108,15 +87,36 @@
 
         .font-luxury { font-family: 'Cinzel', serif; }
 
-        /* Performance: Smooth Gallery Hover */
         .game-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
         .game-card:hover {
             border-color: var(--orange-primary);
-            transform: scale(1.03);
-            box-shadow: 0 0 30px rgba(255, 140, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* MOBILE OPTIMIZATION: BUTTON ON FIRST PAGE */
+        @media (max-width: 768px) {
+            .mobile-top-margin {
+                margin-top: 20px !important; /* Proper top margin */
+            }
+            .hero-title {
+                font-size: 2.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            .lottie-container {
+                max-width: 260px !important; /* Smaller animation for mobile */
+                margin-bottom: 10px !important;
+            }
+            .hero-desc {
+                font-size: 0.9rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            .btn-orange, .btn-outline {
+                padding: 10px 20px !important;
+                font-size: 12px !important;
+            }
         }
     </style>
 </head>
@@ -127,50 +127,56 @@
     <div class="min-h-screen flex flex-col">
         <div class="ticker-wrap sticky top-0 backdrop-blur-lg">
             <div class="ticker-move space-x-12">
-                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-orange-500">LIVE:</span> IND VS PAK - 1.95 ODDS</span>
-                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-orange-500">PAYOUT:</span> 2 MINUTE INSTANT WITHDRAWAL</span>
-                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-orange-500">WINNER:</span> USER_771 WON ₹1,20,000</span>
-                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-orange-500">LIVE:</span> IND VS PAK - 1.95 ODDS</span>
-                <span class="text-[10px] font-bold tracking-widest uppercase"><span class="text-orange-500">PAYOUT:</span> 2 MINUTE INSTANT WITHDRAWAL</span>
+                <span class="text-[9px] font-bold tracking-widest uppercase"><span class="text-orange-500">LIVE:</span> IND VS PAK - 1.95 ODDS</span>
+                <span class="text-[9px] font-bold tracking-widest uppercase"><span class="text-orange-500">PAYOUT:</span> 2 MINUTE INSTANT WITHDRAWAL</span>
+                <span class="text-[9px] font-bold tracking-widest uppercase"><span class="text-orange-500">WINNER:</span> USER_771 WON ₹1,20,000</span>
+                <span class="text-[9px] font-bold tracking-widest uppercase"><span class="text-orange-500">LIVE:</span> IND VS PAK - 1.95 ODDS</span>
             </div>
         </div>
 
-        <nav class="max-w-7xl mx-auto w-full px-6 py-6 flex justify-between items-center z-50">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 border border-orange-500/40 bg-orange-500/10 rounded-xl flex items-center justify-center font-luxury text-orange-500 text-xl shadow-[0_0_15px_rgba(255,140,0,0.2)]">F</div>
+        <nav class="max-w-7xl mx-auto w-full px-5 py-4 flex justify-between items-center z-50">
+            <div class="flex items-center gap-2">
+                <div class="w-9 h-9 border border-orange-500/40 bg-orange-500/10 rounded-lg flex items-center justify-center font-luxury text-orange-500 text-lg">F</div>
                 <div class="flex flex-col">
-                    <span class="font-luxury text-xl tracking-widest orange-gradient leading-none">FAIRPLAY</span>
-                    <span class="text-[7px] tracking-[0.4em] text-gray-500 font-bold uppercase">Elite Exchange</span>
+                    <span class="font-luxury text-lg tracking-widest orange-gradient leading-none">FAIRPLAY</span>
+                    <span class="text-[6px] tracking-[0.4em] text-gray-500 font-bold uppercase">Elite Exchange</span>
                 </div>
             </div>
-            <a href="https://www.fairplayofficial99.com/sign-up" class="btn-orange !py-2 !px-6 !text-[11px] !rounded-full">Client Login</a>
+            <a href="https://www.fairplayofficial99.com/sign-up" class="btn-orange !py-1.5 !px-5 !text-[10px] !rounded-md">Login</a>
         </nav>
 
-        <main class="flex-grow flex flex-col items-center px-6">
-            <div class="max-w-7xl mx-auto w-full hero-container">
-                <div class="grid lg:grid-cols-2 gap-12 items-center w-full py-10">
+        <main class="flex-grow flex flex-col items-center px-5 mobile-top-margin">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="grid lg:grid-cols-2 gap-8 items-center w-full">
                     
+                    <div class="order-1 lg:order-2 flex justify-center relative">
+                        <div class="absolute inset-0 bg-orange-500/5 blur-[80px] rounded-full"></div>
+                        <dotlottie-player
+                            src="https://lottie.host/0da3b876-656e-4ac0-a78f-18b49fb718fb/bwQm8lT2Vs.lottie"
+                            background="transparent" speed="1" loop autoplay
+                            class="lottie-container relative z-10 w-full max-w-[300px] lg:max-w-[480px]">
+                        </dotlottie-player>
+                    </div>
+
                     <div class="text-center lg:text-left order-2 lg:order-1">
-                        <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-6">
+                        <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full mb-4">
                             <span class="relative flex h-2 w-2">
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
                             </span>
-                            <span class="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase">Trusted by 2M+ Players</span>
+                            <span class="text-[9px] font-bold tracking-[0.1em] text-orange-400 uppercase">2M+ Active Players</span>
                         </div>
                         
-                        <h1 class="font-luxury text-5xl md:text-7xl lg:text-8xl mb-6 leading-[1.1] text-white">
+                        <h1 class="hero-title font-luxury text-4xl md:text-7xl mb-4 leading-tight text-white">
                             UNLEASH THE <br>
                             <span class="orange-gradient">CHAMPION</span>
                         </h1>
                         
-                        <p class="text-gray-400 text-sm md:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-                            India's most prestigious gaming exchange. 
-                            <span class="text-white font-medium underline decoration-orange-500/50">Instant settlements</span>, 
-                            zero-delay betting, and the industry's highest odds.
+                        <p class="hero-desc text-gray-400 text-sm md:text-lg mb-6 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            India's elite exchange. <span class="text-white font-medium">Instant settlements</span> and the market's highest odds.
                         </p>
 
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10">
                             <a href="https://www.fairplayofficial99.com/sign-up" class="btn-orange">
                                 Create Platinum ID
                             </a>
@@ -180,63 +186,47 @@
                         </div>
                     </div>
 
-                    <div class="order-1 lg:order-2 flex justify-center relative">
-                        <div class="absolute inset-0 bg-orange-500/10 blur-[100px] rounded-full"></div>
-                        <dotlottie-player
-                            src="https://lottie.host/0da3b876-656e-4ac0-a78f-18b49fb718fb/bwQm8lT2Vs.lottie"
-                            background="transparent" speed="1" loop autoplay
-                            class="relative z-10 w-full max-w-[350px] md:max-w-[500px] drop-shadow-[0_0_30px_rgba(255,140,0,0.3)]">
-                        </dotlottie-player>
-                    </div>
-
                 </div>
             </div>
 
-            <section class="max-w-7xl mx-auto w-full py-20 border-t border-white/5">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                    <div class="text-center md:text-left">
-                        <h2 class="font-luxury text-3xl orange-gradient tracking-widest uppercase">Premium Markets</h2>
-                        <p class="text-gray-500 text-xs tracking-[0.3em] uppercase mt-2">Live Casino & Sports Exchange</p>
+            <section class="max-w-7xl mx-auto w-full py-12 border-t border-white/5">
+                <h2 class="font-luxury text-xl orange-gradient mb-8 tracking-widest uppercase text-center lg:text-left">Featured Markets</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="game-card rounded-xl overflow-hidden aspect-[4/5] bg-white/5">
+                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-3CJ01.webp" loading="lazy" class="w-full h-full object-cover">
                     </div>
-                </div>
-
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="game-card rounded-2xl overflow-hidden aspect-[4/5] bg-white/5">
-                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-3CJ01.webp" loading="lazy" class="w-full h-full object-cover" alt="Game">
+                    <div class="game-card rounded-xl overflow-hidden aspect-[4/5] bg-white/5">
+                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-TP-V3.webp" loading="lazy" class="w-full h-full object-cover">
                     </div>
-                    <div class="game-card rounded-2xl overflow-hidden aspect-[4/5] bg-white/5">
-                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-TP-V3.webp" loading="lazy" class="w-full h-full object-cover" alt="Game">
+                    <div class="game-card rounded-xl overflow-hidden aspect-[4/5] bg-white/5">
+                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_vortex.webp" loading="lazy" class="w-full h-full object-cover">
                     </div>
-                    <div class="game-card rounded-2xl overflow-hidden aspect-[4/5] bg-white/5">
-                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_vortex.webp" loading="lazy" class="w-full h-full object-cover" alt="Game">
-                    </div>
-                    <div class="game-card rounded-2xl overflow-hidden aspect-[4/5] bg-white/5">
-                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_instant_lottery.webp" loading="lazy" class="w-full h-full object-cover" alt="Game">
+                    <div class="game-card rounded-xl overflow-hidden aspect-[4/5] bg-white/5">
+                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_instant_lottery.webp" loading="lazy" class="w-full h-full object-cover">
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="w-full bg-black/80 backdrop-blur-2xl border-t border-orange-500/20 py-10 px-6">
+        <footer class="w-full bg-black/90 border-t border-orange-500/20 py-8 px-5">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-3 gap-4 text-center mb-8">
+                <div class="grid grid-cols-3 gap-2 text-center mb-6">
                     <div>
-                        <p class="text-orange-500 font-bold text-xl md:text-3xl">100%</p>
-                        <p class="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-gray-500 mt-1">First Deposit Bonus</p>
+                        <p class="text-orange-500 font-bold text-lg md:text-2xl">100%</p>
+                        <p class="text-[7px] uppercase tracking-tighter text-gray-500">Welcome Bonus</p>
                     </div>
                     <div class="border-x border-white/10">
-                        <p class="text-orange-500 font-bold text-xl md:text-3xl">2 MIN</p>
-                        <p class="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-gray-500 mt-1">Express Withdrawal</p>
+                        <p class="text-orange-500 font-bold text-lg md:text-2xl">2 MIN</p>
+                        <p class="text-[7px] uppercase tracking-tighter text-gray-500">Withdrawal</p>
                     </div>
                     <div>
-                        <p class="text-orange-500 font-bold text-xl md:text-3xl">24/7</p>
-                        <p class="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-gray-500 mt-1">Elite VIP Support</p>
+                        <p class="text-orange-500 font-bold text-lg md:text-2xl">24/7</p>
+                        <p class="text-[7px] uppercase tracking-tighter text-gray-500">Support</p>
                     </div>
                 </div>
-                
-                <div class="pt-8 border-t border-white/5 text-center">
-                    <p class="text-[10px] tracking-[0.4em] text-gray-600 font-bold uppercase">
-                        Ads by <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank" class="text-orange-500 hover:text-orange-400 transition-colors">NexGroww</a>
+                <div class="pt-4 text-center border-t border-white/5">
+                    <p class="text-[9px] tracking-[0.2em] text-gray-600 font-bold uppercase">
+                        Ads by <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank" class="text-orange-500">NexGroww</a>
                     </p>
                 </div>
             </div>
