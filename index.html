@@ -3,131 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FairPlay | Premium Betting & Casino</title>
+    <title>FairPlay Official | India's #1 Trusted Exchange</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
-        :root { --accent: #f57c00; --success: #4caf50; --dark-bg: #0a0a0a; }
-        body { background-color: var(--dark-bg); color: #e0e0e0; font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-        .btn-glow:hover { box-shadow: 0 0 20px rgba(245, 124, 0, 0.6); }
-        .step-line::after { content: ''; position: absolute; top: 50%; left: 100%; width: 100%; height: 2px; background: #333; z-index: -1; }
-        @media (max-width: 768px) { .step-line::after { display: none; } }
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;600;900&display=swap');
+        
+        body { margin: 0; background-color: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        
+        .font-special { font-family: 'Syncopate', sans-serif; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.4s ease;
+        }
+        .glass:hover { border-color: #f57c00; transform: translateY(-5px); }
+
+        .btn-track {
+            background: linear-gradient(90deg, #f57c00, #ff9800);
+            box-shadow: 0 0 20px rgba(245, 124, 0, 0.4);
+            transition: 0.3s;
+        }
+        .btn-track:hover { box-shadow: 0 0 40px rgba(245, 124, 0, 0.8); transform: scale(1.05); }
+
+        .text-glow { text-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <nav class="sticky top-0 z-50 glass px-4 py-3 flex justify-between items-center">
-        <div class="text-2xl font-black italic tracking-tighter text-orange-500">FAIRPLAY</div>
-        <div class="flex gap-2">
-            <a href="https://www.fairplayofficial99.com/sign-up?utm_source=info_page" 
-               class="bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold px-5 py-2 rounded-full transition btn-glow uppercase">
-               Join Now
+    <div id="canvas-container"></div>
+
+    <div class="relative z-10">
+        <nav class="flex justify-between items-center px-6 py-5 border-b border-white/10 bg-black/40">
+            <img src="YOUR_LOGO_URL.png" alt="FAIRPLAY LOGO" class="h-10">
+            <a href="https://www.fairplayofficial99.com/sign-up?utm_source=top_nav" class="btn-track px-6 py-2 rounded font-black text-xs tracking-tighter uppercase">
+                Register Now
             </a>
-        </div>
-    </nav>
+        </nav>
 
-    <section class="relative py-16 px-6 text-center animate__animated animate__fadeIn">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-            The World's Most Trusted <br><span class="text-orange-500">Betting Exchange</span>
-        </h1>
-        <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-sm md:text-base leading-relaxed">
-            Get the best odds on Cricket, Tennis, Soccer, and 50+ other sports. Experience instant deposits and lightning-fast withdrawals on India's #1 platform.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <div class="glass p-3 rounded-lg flex items-center gap-2">
-                <span class="text-green-500">✔</span> <span class="text-xs">Fast Payouts</span>
-            </div>
-            <div class="glass p-3 rounded-lg flex items-center gap-2">
-                <span class="text-green-500">✔</span> <span class="text-xs">24/7 Live Chat</span>
-            </div>
-            <div class="glass p-3 rounded-lg flex items-center gap-2">
-                <span class="text-green-500">✔</span> <span class="text-xs">Secure Payments</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 px-6 bg-[#0f0f0f]">
-        <h2 class="text-center text-2xl font-bold mb-12 uppercase tracking-widest text-gray-500">How to Get Started</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
-            <div class="relative group animate__animated animate__fadeInLeft">
-                <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl group-hover:scale-110 transition">1</div>
-                <h3 class="font-bold mb-2">Create Account</h3>
-                <p class="text-xs text-gray-500">Sign up in 30 seconds with your mobile number and basic details.</p>
-            </div>
-            <div class="relative group animate__animated animate__fadeInUp">
-                <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl group-hover:scale-110 transition text-white">2</div>
-                <h3 class="font-bold mb-2">Deposit Funds</h3>
-                <p class="text-xs text-gray-500">Use UPI, Net Banking, or Crypto to add funds to your wallet instantly.</p>
-            </div>
-            <div class="relative group animate__animated animate__fadeInRight">
-                <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl group-hover:scale-110 transition">3</div>
-                <h3 class="font-bold mb-2">Start Winning</h3>
-                <p class="text-xs text-gray-500">Place your bets on live matches and enjoy the best exchange rates.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 px-4 max-w-4xl mx-auto">
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-bold flex items-center gap-2">
-                <span class="flex h-3 w-3 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+        <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+            <div class="animate__animated animate__zoomIn">
+                <span class="bg-orange-600/20 text-orange-500 border border-orange-500/30 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-4 inline-block">
+                    India's Most Secure Exchange
                 </span>
-                Live Market Preview
-            </h2>
-            <button class="text-xs text-orange-500 font-bold uppercase">Refresh Odds</button>
-        </div>
-
-        <div class="glass rounded-xl overflow-hidden mb-4 animate__animated animate__slideInLeft">
-            <div class="p-3 border-b border-white/5 flex justify-between bg-white/5 items-center">
-                <span class="text-[10px] font-bold tracking-widest text-gray-400">CRICKET | WORLD CUP</span>
-                <span class="text-[10px] text-green-500 font-bold">In-Play</span>
+                <h1 class="font-special text-4xl md:text-7xl font-bold text-glow mb-6 leading-tight">
+                    DOMINATE THE <br> <span class="text-orange-500">MARKET</span>
+                </h1>
+                <p class="text-gray-400 max-w-2xl text-sm md:text-lg mb-10 leading-relaxed">
+                    Join 1 Million+ winners on the most advanced betting exchange. Get 300% Welcome Bonus on your first deposit and experience instant 5-minute withdrawals.
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <a href="https://www.fairplayofficial99.com/sign-up?utm_source=hero_main" class="btn-track px-12 py-4 rounded-full font-black text-lg uppercase">
+                        Get 300% Bonus
+                    </a>
+                    <p class="text-[10px] text-gray-500">*Valid for new users only</p>
+                </div>
             </div>
-            <div class="p-4 flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="text-lg font-bold">India vs Pakistan</div>
-                <div class="flex gap-2">
-                    <div class="flex flex-col items-center">
-                        <span class="text-[9px] mb-1 text-gray-500">BACK</span>
-                        <button class="w-16 h-12 bg-blue-200 text-blue-900 font-bold rounded flex flex-col items-center justify-center hover:bg-blue-300 transition">
-                            1.92 <span class="text-[8px] font-normal">45k</span>
-                        </button>
+        </section>
+
+        <section class="py-20 px-6 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-orange-500 font-bold mb-2">⚡ Instant Payouts</h3>
+                    <p class="text-xs text-gray-400">Withdraw your winnings directly to your bank account within 5 minutes. 24/7 processing guaranteed.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-orange-500 font-bold mb-2">🛡️ Highest Security</h3>
+                    <p class="text-xs text-gray-400">End-to-end encrypted transactions with 2FA protection. Your data and money are always safe.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-orange-500 font-bold mb-2">📈 Best Market Odds</h3>
+                    <p class="text-xs text-gray-400">We offer the lowest commission and highest liquidity in the industry across all major sports.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-black/60 border-y border-white/5">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-center font-special text-2xl mb-16">How to Start Winning</h2>
+                <div class="space-y-12">
+                    <div class="flex gap-6 items-start">
+                        <div class="w-12 h-12 rounded-full border border-orange-500 flex items-center justify-center shrink-0 font-bold text-orange-500">1</div>
+                        <div>
+                            <h4 class="font-bold text-lg">One-Click Registration</h4>
+                            <p class="text-sm text-gray-500">Sign up using your mobile number. No lengthy forms or complicated verification processes.</p>
+                        </div>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <span class="text-[9px] mb-1 text-gray-500">LAY</span>
-                        <button class="w-16 h-12 bg-pink-200 text-pink-900 font-bold rounded flex flex-col items-center justify-center hover:bg-pink-300 transition">
-                            1.94 <span class="text-[8px] font-normal">12k</span>
-                        </button>
+                    <div class="flex gap-6 items-start">
+                        <div class="w-12 h-12 rounded-full border border-orange-500 flex items-center justify-center shrink-0 font-bold text-orange-500">2</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Instant Deposit</h4>
+                            <p class="text-sm text-gray-500">Add funds via UPI, WhatsApp Pay, or Bank Transfer. Your balance reflects instantly.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="w-12 h-12 rounded-full border border-orange-500 flex items-center justify-center shrink-0 font-bold text-orange-500">3</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Play & Withdraw</h4>
+                            <p class="text-sm text-gray-500">Bet on your favorite sports or casino games and withdraw your profits anytime, anywhere.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-10 glass border-none text-center">
-        <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-6">Safe & Secure Transactions</p>
-        <div class="flex flex-wrap justify-center gap-8 opacity-40 grayscale hover:grayscale-0 transition duration-500">
-            <span class="font-black text-xl">UPI</span>
-            <span class="font-black text-xl">VISA</span>
-            <span class="font-black text-xl">MasterCard</span>
-            <span class="font-black text-xl">Bitcoin</span>
-            <span class="font-black text-xl">PhonePe</span>
-        </div>
-    </section>
+        <section class="py-32 text-center">
+            <h2 class="text-4xl font-black mb-8 animate__animated animate__pulse animate__infinite">READY TO PLAY?</h2>
+            <a href="https://www.fairplayofficial99.com/sign-up?utm_source=footer_cta" class="btn-track px-16 py-5 rounded-full font-black text-xl uppercase inline-block">
+                Create My ID Now
+            </a>
+            <div class="mt-8 opacity-50 flex justify-center gap-6 text-sm">
+                <span>100% Legal</span> | <span>24/7 Support</span> | <span>Privacy Guaranteed</span>
+            </div>
+        </section>
+    </div>
 
-    <section class="py-20 text-center">
-        <h2 class="text-3xl font-bold mb-6">Ready to Join the Action?</h2>
-        <a href="https://www.fairplayofficial99.com/sign-up?utm_source=footer_cta" 
-           class="inline-block bg-orange-600 hover:bg-orange-500 text-white font-bold px-10 py-4 rounded-full transition-all transform hover:scale-110 btn-glow">
-            CREATE MY FREE ACCOUNT
-        </a>
-        <p class="mt-4 text-xs text-gray-500 italic">Join over 1 Million+ users today.</p>
-    </section>
+    <script>
+        // Three.js Background Logic
+        let scene, camera, renderer, particles;
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
 
-    <footer class="p-8 text-center border-t border-gray-900 text-[10px] text-gray-600">
-        <p>© 2026 FairPlay Official. 18+ Only. Play Responsibly.</p>
-    </footer>
+            const geo = new THREE.BufferGeometry();
+            const count = 3000;
+            const pos = new Float32Array(count * 3);
+            for(let i=0; i<count*3; i++) pos[i] = (Math.random() - 0.5) * 10;
+            geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
 
+            const mat = new THREE.PointsMaterial({ color: 0xf57c00, size: 0.02, transparent: true, opacity: 0.6 });
+            particles = new THREE.Points(geo, mat);
+            scene.add(particles);
+            camera.position.z = 3;
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            particles.rotation.y += 0.001;
+            particles.rotation.x += 0.0005;
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        init();
+    </script>
 </body>
 </html>
