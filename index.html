@@ -7,6 +7,8 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
     
@@ -130,13 +132,13 @@
                 </div>
             </div>
             
-            <div class="swiper hero-swiper rounded-[40px] overflow-hidden shadow-2xl shadow-orange-500/10">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide relative">
-                        <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_vortex.webp" class="w-full h-[500px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                    </div>
-                </div>
+            <div class="flex justify-center items-center rounded-[40px] overflow-hidden bg-white/5 border border-white/10 p-8 shadow-2xl shadow-orange-500/10 min-h-[400px]">
+                <dotlottie-wc
+                  src="https://lottie.host/0da3b876-656e-4ac0-a78f-18b49fb718fb/bwQm8lT2Vs.lottie"
+                  style="width: 100%; max-width: 500px; height: auto;"
+                  autoplay
+                  loop>
+                </dotlottie-wc>
             </div>
         </div>
     </section>
@@ -276,6 +278,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // Swiper initialization (optional now, but kept for other sliders)
         const swiper = new Swiper('.hero-swiper', {
             loop: true,
             autoplay: { delay: 3000 },
