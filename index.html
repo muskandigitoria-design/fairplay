@@ -35,14 +35,14 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Ensures no scroll on main screen */
+            overflow: hidden; 
         }
 
         .hero-visual {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.15), transparent),
-                        linear-gradient(to bottom, rgba(8,8,8,0.6), #080808),
+                        linear-gradient(to bottom, rgba(8,8,8,0.7), #080808),
                         url('https://gogamex.fun/wp-content/uploads/2026/02/Игровые-автоматы-33-slots.jpg');
             background-size: cover;
             z-index: -1;
@@ -79,9 +79,9 @@
         @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .ticker-wrap {
             overflow: hidden;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 6px 0;
+            padding: 8px 0;
             flex-shrink: 0;
         }
         .ticker-move {
@@ -100,13 +100,14 @@
             .hero-desc { font-size: 0.95rem !important; margin-bottom: 1.5rem !important; }
             .mobile-hide { display: none !important; }
             .nav-compact { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+            .footer-stats { padding-bottom: 100px; } /* Space for floating button */
         }
 
         /* Fix for small height screens */
-        @media (max-height: 700px) {
-            .hero-title { font-size: 2.5rem !important; }
+        @media (max-height: 720px) {
+            .hero-title { font-size: 2.8rem !important; }
             .hero-desc { display: none; }
-            .lottie-container { transform: scale(0.8); }
+            .lottie-container { transform: scale(0.85); }
         }
     </style>
 </head>
@@ -127,20 +128,20 @@
 
         <nav class="nav-compact max-w-7xl mx-auto w-full px-6 py-4 flex justify-between items-center z-50">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 border border-gold/40 bg-gold/5 rounded-xl flex items-center justify-center font-luxury text-gold text-xl">F</div>
+                <div class="w-10 h-10 border border-gold/40 bg-gold/5 rounded-xl flex items-center justify-center font-luxury text-gold text-xl shadow-lg shadow-gold/10">F</div>
                 <div class="flex flex-col">
                     <span class="font-luxury text-xl tracking-widest gold-gradient leading-none">FAIRPLAY</span>
                     <span class="text-[7px] tracking-[0.4em] text-gray-500 font-bold uppercase">Elite Exchange</span>
                 </div>
             </div>
-            <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main !py-2 !px-6 !text-[11px] !rounded-full shadow-none">Log In</a>
+            <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main !py-2 !px-6 !text-[11px] !rounded-full">Log In</a>
         </nav>
 
         <main class="flex-grow flex items-center px-6 relative">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="grid lg:grid-cols-2 gap-4 lg:gap-12 items-center hero-content">
                     
-                    <div class="text-center lg:text-left animate-in fade-in duration-700">
+                    <div class="text-center lg:text-left">
                         <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1 rounded-full mb-4">
                             <span class="relative flex h-2 w-2">
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
@@ -175,58 +176,44 @@
                         <dotlottie-player
                             src="https://lottie.host/0da3b876-656e-4ac0-a78f-18b49fb718fb/bwQm8lT2Vs.lottie"
                             background="transparent" speed="1" loop autoplay
-                            class="relative z-10 w-full max-w-[500px]">
+                            class="relative z-10 w-full max-w-[520px]">
                         </dotlottie-player>
                     </div>
                 </div>
             </div>
         </main>
 
-        <div class="w-full bg-black/40 backdrop-blur-md border-t border-white/5 py-6 px-6 flex-shrink-0">
-            <div class="max-w-7xl mx-auto flex flex-row justify-around items-center text-center">
-                <div>
-                    <p class="text-gold font-bold text-lg md:text-2xl leading-none">100%</p>
-                    <p class="text-[8px] md:text-[10px] uppercase tracking-widest text-gray-500 mt-1">First Bonus</p>
-                </div>
-                <div class="w-[1px] h-8 bg-white/10"></div>
-                <div>
-                    <p class="text-gold font-bold text-lg md:text-2xl leading-none">2 MIN</p>
-                    <p class="text-[8px] md:text-[10px] uppercase tracking-widest text-gray-500 mt-1">Withdrawal</p>
-                </div>
-                <div class="w-[1px] h-8 bg-white/10"></div>
-                <div class="mobile-hide">
-                    <p class="text-gold font-bold text-lg md:text-2xl leading-none">24/7</p>
-                    <p class="text-[8px] md:text-[10px] uppercase tracking-widest text-gray-500 mt-1">VIP Support</p>
-                </div>
-                <div class="w-[1px] h-8 bg-white/10 mobile-hide"></div>
-                <div>
-                    <p class="text-gold font-bold text-[10px] md:text-xs tracking-tighter text-gray-400">Ads by NexGroww</p>
-                </div>
+    <footer class="footer-stats w-full bg-black/60 backdrop-blur-xl border-t border-white/5 py-4 flex-shrink-0 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-row justify-around items-center text-center mb-3">
+            <div>
+                <p class="text-gold font-bold text-lg md:text-2xl leading-none">100%</p>
+                <p class="text-[8px] uppercase tracking-widest text-gray-500 mt-1">First Bonus</p>
             </div>
+            <div class="w-[1px] h-6 bg-white/10"></div>
+            <div>
+                <p class="text-gold font-bold text-lg md:text-2xl leading-none">2 MIN</p>
+                <p class="text-[8px] uppercase tracking-widest text-gray-500 mt-1">Withdrawal</p>
+            </div>
+            <div class="w-[1px] h-6 bg-white/10"></div>
+            <div>
+                <p class="text-gold font-bold text-lg md:text-2xl leading-none">24/7</p>
+                <p class="text-[8px] uppercase tracking-widest text-gray-500 mt-1">VIP Support</p>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 pt-3 text-center">
+            <p class="text-[10px] tracking-[0.3em] text-gray-600 font-bold uppercase">
+                Ads by <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank" class="text-gold/80 hover:text-gold transition-all duration-300 hover:tracking-[0.4em]">NexGroww</a>
+            </p>
         </div>
     </div>
+</footer>
+    </div>
 
-    <section class="max-w-7xl mx-auto px-6 py-20">
-        <h3 class="font-luxury text-3xl gold-gradient mb-12">Top Assets</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group">
-                <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-3CJ01.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            </div>
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group">
-                <img src="https://gogamex.fun/wp-content/uploads/2026/02/RG-TP-V3.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            </div>
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group">
-                <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_vortex.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            </div>
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group">
-                <img src="https://gogamex.fun/wp-content/uploads/2026/02/more_slots_instant_lottery.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            </div>
-        </div>
-    </section>
-
-    <div class="lg:hidden fixed bottom-4 left-4 right-4 z-[200]">
-        <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main w-full !py-4 shadow-[0_20px_40px_rgba(212,175,55,0.4)] border-t border-white/20">
-            GET YOUR PLATINUM ID NOW
+    <div class="lg:hidden fixed bottom-6 left-6 right-6 z-[200]">
+        <a href="https://www.fairplayofficial99.com/sign-up" class="btn-main w-full !py-4 shadow-[0_20px_50px_rgba(212,175,55,0.4)] border border-white/10">
+            CLAIM YOUR BONUS NOW
         </a>
     </div>
 
